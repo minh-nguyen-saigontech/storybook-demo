@@ -1,0 +1,44 @@
+<!-- Checkbox.stories.mdx -->
+
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import Checkbox from "../components/Checkbox/Checkbox";
+
+<Meta title="MDX/CheckboxMDX" component={Checkbox} />
+
+export const Template = (args) => <Checkbox {...args} />;
+
+# Checkbox
+
+<ArgsTable of={Checkbox} />
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our
+Markdown documentation.
+
+<Canvas>
+  <Story
+    name="Unchecked"
+    args={{
+      checked: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Checked"
+    args={{
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="WithLabel"
+    args={{
+      label: "Some text",
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
